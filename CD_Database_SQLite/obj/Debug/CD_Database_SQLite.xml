@@ -1,0 +1,50 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CD_Database_SQLite
+</name>
+</assembly>
+<members>
+<member name="T:CD_Database_SQLite.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:CD_Database_SQLite.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:CD_Database_SQLite.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:CD_Database_SQLite.SQLite_Funcs.Add_Volume(System.String,System.String,System.String)">
+ <summary>
+ Add New Volume to the Database.
+ </summary>
+ <returns>Returns a minus for an error, else positive for the Volume ID</returns>
+</member>
+<member name="M:CD_Database_SQLite.SQLite_Funcs.Add_File_ToDatabase(System.Int64,System.String,System.String,System.DateTime,System.Int64)">
+ <summary>
+ Parses a text file from a DIR command, and writes the serial no and volume into the Volume table, and each file into the Files table.
+ </summary>
+ <param name="VolumeID">Int64, the ID of the disk volume in the volumes table.</param>
+ <param name="FileName">String, Filename</param>
+ <param name="Directory">String, Directory the file is stored in</param>
+ <param name="FDate">DateTime, the date and time stamp of the file</param>
+ <param name="FSize">Int64, size of the file</param>
+ <returns>0 for true, 1 for error</returns>
+</member>
+<member name="M:CD_Database_SQLite.SQLite_Funcs.ImportDIRFile(System.String,System.Boolean)">
+ <summary>
+ Function to Import an MS-DOS DIR command, saved to a text file.
+ </summary>
+ <param name="FileToImport">Path to the text file to import</param>
+ <returns>True if file imported with no errors.</returns>
+</member>
+</members>
+</doc>
