@@ -7,6 +7,51 @@
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 
+CD_Database_SQLite/bin/
+
+# Build results
+CD_Database_SQLite/[Dd]ebug/
+CD_Database_SQLite/[Dd]ebugPublic/
+CD_Database_SQLite/[Rr]elease/
+CD_Database_SQLite/[Rr]eleases/
+CD_Database_SQLite/x64/
+CD_Database_SQLite/x86/
+CD_Database_SQLite/[Aa][Rr][Mm]/
+CD_Database_SQLite/[Aa][Rr][Mm]64/
+CD_Database_SQLite/bld/
+CD_Database_SQLite/[Bb]in/
+CD_Database_SQLite/[Oo]bj/
+CD_Database_SQLite/[Ll]og/
+CD_Database_SQLite/[Ll]ogs/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Mono auto generated files
+mono_crash.*
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
 # Files built by Visual Studio
 *_i.c
 *_p.c
@@ -38,3 +83,5 @@
 
 # SQLite Databases
 *.sqlite
+
+*.rar

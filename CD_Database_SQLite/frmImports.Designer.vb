@@ -37,6 +37,9 @@ Partial Class frmImports
         Me.lblCurrentFile = New System.Windows.Forms.Label()
         Me.chkInMemory = New System.Windows.Forms.CheckBox()
         Me.chkRemoveDirLetter = New System.Windows.Forms.CheckBox()
+        Me.cmbDriveList = New System.Windows.Forms.ComboBox()
+        Me.btnImportDrive = New System.Windows.Forms.Button()
+        Me.lblDriveList = New System.Windows.Forms.Label()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -86,7 +89,7 @@ Partial Class frmImports
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 437)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 532)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(675, 22)
         Me.StatusStrip1.TabIndex = 6
@@ -126,7 +129,7 @@ Partial Class frmImports
         'chkInMemory
         '
         Me.chkInMemory.AutoSize = True
-        Me.chkInMemory.Location = New System.Drawing.Point(41, 84)
+        Me.chkInMemory.Location = New System.Drawing.Point(38, 84)
         Me.chkInMemory.Name = "chkInMemory"
         Me.chkInMemory.Size = New System.Drawing.Size(287, 17)
         Me.chkInMemory.TabIndex = 10
@@ -145,11 +148,40 @@ Partial Class frmImports
         Me.chkRemoveDirLetter.Text = "Remove Directory Drive Letter"
         Me.chkRemoveDirLetter.UseVisualStyleBackColor = True
         '
+        'cmbDriveList
+        '
+        Me.cmbDriveList.FormattingEnabled = True
+        Me.cmbDriveList.Location = New System.Drawing.Point(38, 493)
+        Me.cmbDriveList.Name = "cmbDriveList"
+        Me.cmbDriveList.Size = New System.Drawing.Size(443, 21)
+        Me.cmbDriveList.TabIndex = 12
+        '
+        'btnImportDrive
+        '
+        Me.btnImportDrive.Location = New System.Drawing.Point(487, 491)
+        Me.btnImportDrive.Name = "btnImportDrive"
+        Me.btnImportDrive.Size = New System.Drawing.Size(141, 23)
+        Me.btnImportDrive.TabIndex = 13
+        Me.btnImportDrive.Text = "Import Drive"
+        Me.btnImportDrive.UseVisualStyleBackColor = True
+        '
+        'lblDriveList
+        '
+        Me.lblDriveList.AutoSize = True
+        Me.lblDriveList.Location = New System.Drawing.Point(35, 477)
+        Me.lblDriveList.Name = "lblDriveList"
+        Me.lblDriveList.Size = New System.Drawing.Size(51, 13)
+        Me.lblDriveList.TabIndex = 14
+        Me.lblDriveList.Text = "Drive List"
+        '
         'frmImports
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(675, 459)
+        Me.ClientSize = New System.Drawing.Size(675, 554)
+        Me.Controls.Add(Me.lblDriveList)
+        Me.Controls.Add(Me.btnImportDrive)
+        Me.Controls.Add(Me.cmbDriveList)
         Me.Controls.Add(Me.chkRemoveDirLetter)
         Me.Controls.Add(Me.chkInMemory)
         Me.Controls.Add(Me.lblCurrentFile)
@@ -185,4 +217,7 @@ Partial Class frmImports
     Friend WithEvents chkInMemory As CheckBox
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents chkRemoveDirLetter As CheckBox
+    Friend WithEvents cmbDriveList As ComboBox
+    Friend WithEvents btnImportDrive As Button
+    Friend WithEvents lblDriveList As Label
 End Class
