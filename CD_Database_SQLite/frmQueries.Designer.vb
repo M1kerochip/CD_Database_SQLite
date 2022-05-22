@@ -40,6 +40,7 @@ Partial Class frmQueries
         Me.txtQuery.Location = New System.Drawing.Point(12, 351)
         Me.txtQuery.Multiline = True
         Me.txtQuery.Name = "txtQuery"
+        Me.txtQuery.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtQuery.Size = New System.Drawing.Size(776, 153)
         Me.txtQuery.TabIndex = 0
         '

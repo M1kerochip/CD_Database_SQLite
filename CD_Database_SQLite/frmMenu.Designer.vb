@@ -25,62 +25,100 @@ Partial Class frmMenu
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
         Me.btnDatabase = New System.Windows.Forms.Button()
         Me.btnDisplayFiles = New System.Windows.Forms.Button()
-        Me.bntQueries = New System.Windows.Forms.Button()
         Me.lblProgramName = New System.Windows.Forms.Label()
         Me.linklblProject = New System.Windows.Forms.LinkLabel()
+        Me.btnSeries = New System.Windows.Forms.Button()
+        Me.btnRenameFiles = New System.Windows.Forms.Button()
+        Me.btnRenameFolder = New System.Windows.Forms.Button()
+        Me.bntQueries = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnDatabase
         '
         Me.btnDatabase.Location = New System.Drawing.Point(12, 65)
         Me.btnDatabase.Name = "btnDatabase"
-        Me.btnDatabase.Size = New System.Drawing.Size(590, 81)
+        Me.btnDatabase.Size = New System.Drawing.Size(300, 88)
         Me.btnDatabase.TabIndex = 0
         Me.btnDatabase.Text = "Database Function"
         Me.btnDatabase.UseVisualStyleBackColor = True
         '
         'btnDisplayFiles
         '
-        Me.btnDisplayFiles.Location = New System.Drawing.Point(12, 152)
+        Me.btnDisplayFiles.Location = New System.Drawing.Point(12, 333)
         Me.btnDisplayFiles.Name = "btnDisplayFiles"
-        Me.btnDisplayFiles.Size = New System.Drawing.Size(590, 81)
+        Me.btnDisplayFiles.Size = New System.Drawing.Size(608, 81)
         Me.btnDisplayFiles.TabIndex = 1
         Me.btnDisplayFiles.Text = "Display All Files"
         Me.btnDisplayFiles.UseVisualStyleBackColor = True
         '
-        'bntQueries
-        '
-        Me.bntQueries.Location = New System.Drawing.Point(12, 239)
-        Me.bntQueries.Name = "bntQueries"
-        Me.bntQueries.Size = New System.Drawing.Size(590, 81)
-        Me.bntQueries.TabIndex = 2
-        Me.bntQueries.Text = "Queries"
-        Me.bntQueries.UseVisualStyleBackColor = True
-        '
         'lblProgramName
         '
         Me.lblProgramName.AutoSize = True
-        Me.lblProgramName.Location = New System.Drawing.Point(12, 23)
+        Me.lblProgramName.Location = New System.Drawing.Point(9, 23)
         Me.lblProgramName.Name = "lblProgramName"
-        Me.lblProgramName.Size = New System.Drawing.Size(72, 13)
+        Me.lblProgramName.Size = New System.Drawing.Size(96, 13)
         Me.lblProgramName.TabIndex = 3
-        Me.lblProgramName.Text = "File Database"
+        Me.lblProgramName.Text = "File Database v1.1"
         '
         'linklblProject
         '
         Me.linklblProject.AutoSize = True
-        Me.linklblProject.Location = New System.Drawing.Point(513, 23)
+        Me.linklblProject.Location = New System.Drawing.Point(531, 23)
         Me.linklblProject.Name = "linklblProject"
         Me.linklblProject.Size = New System.Drawing.Size(89, 13)
         Me.linklblProject.TabIndex = 4
         Me.linklblProject.TabStop = True
         Me.linklblProject.Text = "Project on Github"
         '
+        'btnSeries
+        '
+        Me.btnSeries.Enabled = False
+        Me.btnSeries.Location = New System.Drawing.Point(12, 159)
+        Me.btnSeries.Name = "btnSeries"
+        Me.btnSeries.Size = New System.Drawing.Size(300, 81)
+        Me.btnSeries.TabIndex = 5
+        Me.btnSeries.Text = "Series / Links"
+        Me.btnSeries.UseVisualStyleBackColor = True
+        '
+        'btnRenameFiles
+        '
+        Me.btnRenameFiles.Enabled = False
+        Me.btnRenameFiles.Location = New System.Drawing.Point(12, 246)
+        Me.btnRenameFiles.Name = "btnRenameFiles"
+        Me.btnRenameFiles.Size = New System.Drawing.Size(300, 81)
+        Me.btnRenameFiles.TabIndex = 6
+        Me.btnRenameFiles.Text = "Rename Files"
+        Me.btnRenameFiles.UseVisualStyleBackColor = True
+        '
+        'btnRenameFolder
+        '
+        Me.btnRenameFolder.Enabled = False
+        Me.btnRenameFolder.Location = New System.Drawing.Point(320, 246)
+        Me.btnRenameFolder.Name = "btnRenameFolder"
+        Me.btnRenameFolder.Size = New System.Drawing.Size(300, 81)
+        Me.btnRenameFolder.TabIndex = 7
+        Me.btnRenameFolder.Text = "Rename Folders"
+        Me.btnRenameFolder.UseVisualStyleBackColor = True
+        '
+        'bntQueries
+        '
+        Me.bntQueries.BackgroundImage = Global.CD_Database_SQLite.My.Resources.Resources.find_g7cd1dc75c_640
+        Me.bntQueries.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.bntQueries.Location = New System.Drawing.Point(318, 65)
+        Me.bntQueries.Name = "bntQueries"
+        Me.bntQueries.Size = New System.Drawing.Size(302, 88)
+        Me.bntQueries.TabIndex = 2
+        Me.bntQueries.Text = "Queries"
+        Me.bntQueries.UseVisualStyleBackColor = True
+        '
         'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(616, 337)
+        Me.ClientSize = New System.Drawing.Size(630, 429)
+        Me.Controls.Add(Me.btnRenameFolder)
+        Me.Controls.Add(Me.btnRenameFiles)
+        Me.Controls.Add(Me.btnSeries)
         Me.Controls.Add(Me.linklblProject)
         Me.Controls.Add(Me.lblProgramName)
         Me.Controls.Add(Me.bntQueries)
@@ -102,4 +140,7 @@ Partial Class frmMenu
     Friend WithEvents bntQueries As Button
     Friend WithEvents lblProgramName As Label
     Friend WithEvents linklblProject As LinkLabel
+    Friend WithEvents btnSeries As Button
+    Friend WithEvents btnRenameFiles As Button
+    Friend WithEvents btnRenameFolder As Button
 End Class

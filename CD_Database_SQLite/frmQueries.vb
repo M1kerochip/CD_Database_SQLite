@@ -38,12 +38,13 @@
                 Dim SQLID As Int64 = SQL.GetSQLQueryIDByName(txtQueryName.Text, False)
 
                 If SQLID <> -1 Then
-                    Dim res1 As Boolean = False
-                    Dim res2 As Boolean = True
+                    Dim res1 As Boolean
+                    Dim res2 As Boolean
 
                     If RES = txtQueryName.Text Then
                         'No New Name is required
-                        res1 = SQL.UpdateSQLQueryNameByID(SQLID, RES, False)
+                        res1 = True  'Default this to True (For Msgbox, after updates. ie if no new name is required)
+                        res2 = SQL.UpdateSQLQueryQueryByID(SQLID, txtQuery.Text, False)
                     Else
                         'Query is to be renamed
                         res2 = SQL.UpdateSQLQueryQueryByID(SQLID, txtQuery.Text, False)
@@ -90,7 +91,12 @@
         End If
     End Sub
 
-    Private Sub btnLaunch_Click(sender As Object, e As EventArgs) Handles btnLaunch.Click
+    ''' <summary>
+    ''' Handles Both clicking BtnLaunch, and lbQueries.DoubleClick
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnLaunch_Click(sender As Object, e As EventArgs) Handles btnLaunch.Click, lbQueries.DoubleClick
         If lbQueries.SelectedIndex > -1 Then
             Dim Str As String
             Dim SQL1 As New SQLite_Funcs
@@ -163,4 +169,5 @@
             'Nothing selected
         End If
     End Sub
+
 End Class

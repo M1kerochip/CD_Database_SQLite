@@ -22,26 +22,23 @@ Partial Class frmShowFiles
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmShowFiles))
-        Me.DataGridViewMain = New System.Windows.Forms.DataGridView()
         Me.btnShowFiles = New System.Windows.Forms.Button()
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.DataGridViewMain = New System.Windows.Forms.DataGridView()
         Me.txtSQLText = New System.Windows.Forms.TextBox()
+        Me.cmbHeaderSize = New System.Windows.Forms.ComboBox()
+        Me.cmbCellStyle = New System.Windows.Forms.ComboBox()
+        Me.chkDark = New System.Windows.Forms.CheckBox()
+        Me.chkAlternating = New System.Windows.Forms.CheckBox()
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer1.Panel1.SuspendLayout()
+        Me.SplitContainer1.Panel2.SuspendLayout()
+        Me.SplitContainer1.SuspendLayout()
         CType(Me.DataGridViewMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'DataGridViewMain
-        '
-        Me.DataGridViewMain.AllowUserToAddRows = False
-        Me.DataGridViewMain.AllowUserToDeleteRows = False
-        Me.DataGridViewMain.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewMain.Location = New System.Drawing.Point(12, 12)
-        Me.DataGridViewMain.MultiSelect = False
-        Me.DataGridViewMain.Name = "DataGridViewMain"
-        Me.DataGridViewMain.Size = New System.Drawing.Size(776, 418)
-        Me.DataGridViewMain.TabIndex = 0
         '
         'btnShowFiles
         '
@@ -53,37 +50,141 @@ Partial Class frmShowFiles
         Me.btnShowFiles.Text = "Show Files"
         Me.btnShowFiles.UseVisualStyleBackColor = True
         '
+        'SplitContainer1
+        '
+        Me.SplitContainer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SplitContainer1.Location = New System.Drawing.Point(12, 12)
+        Me.SplitContainer1.Name = "SplitContainer1"
+        Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
+        '
+        'SplitContainer1.Panel1
+        '
+        Me.SplitContainer1.Panel1.Controls.Add(Me.DataGridViewMain)
+        '
+        'SplitContainer1.Panel2
+        '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.txtSQLText)
+        Me.SplitContainer1.Size = New System.Drawing.Size(776, 427)
+        Me.SplitContainer1.SplitterDistance = 380
+        Me.SplitContainer1.TabIndex = 3
+        '
+        'DataGridViewMain
+        '
+        Me.DataGridViewMain.AllowUserToAddRows = False
+        Me.DataGridViewMain.AllowUserToDeleteRows = False
+        Me.DataGridViewMain.AllowUserToOrderColumns = True
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        Me.DataGridViewMain.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridViewMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader
+        Me.DataGridViewMain.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.DataGridViewMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
+        Me.DataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewMain.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridViewMain.Location = New System.Drawing.Point(0, 0)
+        Me.DataGridViewMain.MultiSelect = False
+        Me.DataGridViewMain.Name = "DataGridViewMain"
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        Me.DataGridViewMain.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridViewMain.Size = New System.Drawing.Size(776, 380)
+        Me.DataGridViewMain.TabIndex = 2
+        '
         'txtSQLText
         '
-        Me.txtSQLText.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtSQLText.Location = New System.Drawing.Point(13, 436)
+        Me.txtSQLText.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txtSQLText.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtSQLText.ForeColor = System.Drawing.Color.White
+        Me.txtSQLText.Location = New System.Drawing.Point(0, 0)
         Me.txtSQLText.Multiline = True
         Me.txtSQLText.Name = "txtSQLText"
-        Me.txtSQLText.Size = New System.Drawing.Size(694, 41)
-        Me.txtSQLText.TabIndex = 2
+        Me.txtSQLText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtSQLText.Size = New System.Drawing.Size(776, 43)
+        Me.txtSQLText.TabIndex = 3
         Me.txtSQLText.Text = "select * from Files inner join Volumes on Files.Volume_ID = Volumes.ID order by D" &
     "irectory,Filename asc"
         '
-        'Show_Episodes
+        'cmbHeaderSize
+        '
+        Me.cmbHeaderSize.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.cmbHeaderSize.FormattingEnabled = True
+        Me.cmbHeaderSize.Items.AddRange(New Object() {"None", "ColumnHeader", "AllCellsExceptHeader", "AllCells", "DisplayedCellsExceptHeader", "DisplayedCells", "Fill"})
+        Me.cmbHeaderSize.Location = New System.Drawing.Point(12, 447)
+        Me.cmbHeaderSize.Name = "cmbHeaderSize"
+        Me.cmbHeaderSize.Size = New System.Drawing.Size(160, 21)
+        Me.cmbHeaderSize.TabIndex = 4
+        Me.cmbHeaderSize.Text = "AllCellsExceptHeader"
+        '
+        'cmbCellStyle
+        '
+        Me.cmbCellStyle.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.cmbCellStyle.FormattingEnabled = True
+        Me.cmbCellStyle.Items.AddRange(New Object() {"None", "Single", "Raised", "Sunken", "SingleVertical", "RaisedVertical", "SunkenVertical", "SingleHorizontal", "RaisedHorizontal", "SunkenHorizontal"})
+        Me.cmbCellStyle.Location = New System.Drawing.Point(178, 447)
+        Me.cmbCellStyle.Name = "cmbCellStyle"
+        Me.cmbCellStyle.Size = New System.Drawing.Size(180, 21)
+        Me.cmbCellStyle.TabIndex = 5
+        Me.cmbCellStyle.Text = "SingleVertical"
+        '
+        'chkDark
+        '
+        Me.chkDark.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.chkDark.AutoSize = True
+        Me.chkDark.Checked = True
+        Me.chkDark.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkDark.Location = New System.Drawing.Point(364, 449)
+        Me.chkDark.Name = "chkDark"
+        Me.chkDark.Size = New System.Drawing.Size(71, 17)
+        Me.chkDark.TabIndex = 6
+        Me.chkDark.Text = "Dark Grid"
+        Me.chkDark.UseVisualStyleBackColor = True
+        '
+        'chkAlternating
+        '
+        Me.chkAlternating.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.chkAlternating.AutoSize = True
+        Me.chkAlternating.Checked = True
+        Me.chkAlternating.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkAlternating.Location = New System.Drawing.Point(441, 449)
+        Me.chkAlternating.Name = "chkAlternating"
+        Me.chkAlternating.Size = New System.Drawing.Size(131, 17)
+        Me.chkAlternating.TabIndex = 7
+        Me.chkAlternating.Text = "Alternate Row Colours"
+        Me.chkAlternating.UseVisualStyleBackColor = True
+        '
+        'frmShowFiles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 480)
-        Me.Controls.Add(Me.txtSQLText)
+        Me.Controls.Add(Me.chkAlternating)
+        Me.Controls.Add(Me.chkDark)
+        Me.Controls.Add(Me.cmbCellStyle)
+        Me.Controls.Add(Me.cmbHeaderSize)
         Me.Controls.Add(Me.btnShowFiles)
-        Me.Controls.Add(Me.DataGridViewMain)
+        Me.Controls.Add(Me.SplitContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Show_Episodes"
+        Me.Name = "frmShowFiles"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Files: "
+        Me.SplitContainer1.Panel1.ResumeLayout(False)
+        Me.SplitContainer1.Panel2.ResumeLayout(False)
+        Me.SplitContainer1.Panel2.PerformLayout()
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer1.ResumeLayout(False)
         CType(Me.DataGridViewMain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents DataGridViewMain As DataGridView
     Friend WithEvents btnShowFiles As Button
+    Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents txtSQLText As TextBox
+    Friend WithEvents DataGridViewMain As DataGridView
+    Friend WithEvents cmbHeaderSize As ComboBox
+    Friend WithEvents cmbCellStyle As ComboBox
+    Friend WithEvents chkDark As CheckBox
+    Friend WithEvents chkAlternating As CheckBox
 End Class

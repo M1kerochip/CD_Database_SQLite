@@ -193,7 +193,9 @@ Partial Class frmImports
         Me.Controls.Add(Me.btnImportAllFiles)
         Me.Controls.Add(Me.btnCreateDatabase)
         Me.Controls.Add(Me.btnImportCD)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "frmImports"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Imports"
