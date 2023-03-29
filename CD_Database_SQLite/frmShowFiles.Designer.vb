@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmShowFiles
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,24 +20,32 @@ Partial Class frmShowFiles
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmShowFiles))
         Me.btnShowFiles = New System.Windows.Forms.Button()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.DataGridViewMain = New System.Windows.Forms.DataGridView()
+        Me.ContextMenuStripFileFolder = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.AddFolderRenameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.AddFileRenameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.txtSQLText = New System.Windows.Forms.TextBox()
         Me.cmbHeaderSize = New System.Windows.Forms.ComboBox()
         Me.cmbCellStyle = New System.Windows.Forms.ComboBox()
         Me.chkDark = New System.Windows.Forms.CheckBox()
         Me.chkAlternating = New System.Windows.Forms.CheckBox()
+        Me.btnFont = New System.Windows.Forms.Button()
+        Me.FontDialogShowFiles = New System.Windows.Forms.FontDialog()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         CType(Me.DataGridViewMain, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStripFileFolder.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnShowFiles
@@ -82,15 +90,39 @@ Partial Class frmShowFiles
         Me.DataGridViewMain.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.DataGridViewMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
         Me.DataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewMain.ContextMenuStrip = Me.ContextMenuStripFileFolder
         Me.DataGridViewMain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewMain.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridViewMain.MultiSelect = False
         Me.DataGridViewMain.Name = "DataGridViewMain"
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         Me.DataGridViewMain.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridViewMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewMain.Size = New System.Drawing.Size(776, 380)
         Me.DataGridViewMain.TabIndex = 2
+        '
+        'ContextMenuStripFileFolder
+        '
+        Me.ContextMenuStripFileFolder.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddFolderRenameToolStripMenuItem, Me.ToolStripSeparator1, Me.AddFileRenameToolStripMenuItem})
+        Me.ContextMenuStripFileFolder.Name = "ContextMenuStripFileFolder"
+        Me.ContextMenuStripFileFolder.Size = New System.Drawing.Size(207, 54)
+        '
+        'AddFolderRenameToolStripMenuItem
+        '
+        Me.AddFolderRenameToolStripMenuItem.Name = "AddFolderRenameToolStripMenuItem"
+        Me.AddFolderRenameToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.AddFolderRenameToolStripMenuItem.Text = "Add Folder Correction"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(203, 6)
+        '
+        'AddFileRenameToolStripMenuItem
+        '
+        Me.AddFileRenameToolStripMenuItem.Name = "AddFileRenameToolStripMenuItem"
+        Me.AddFileRenameToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.AddFileRenameToolStripMenuItem.Text = "Add Filename Correction"
         '
         'txtSQLText
         '
@@ -154,11 +186,22 @@ Partial Class frmShowFiles
         Me.chkAlternating.Text = "Alternate Row Colours"
         Me.chkAlternating.UseVisualStyleBackColor = True
         '
+        'btnFont
+        '
+        Me.btnFont.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnFont.Location = New System.Drawing.Point(578, 445)
+        Me.btnFont.Name = "btnFont"
+        Me.btnFont.Size = New System.Drawing.Size(75, 23)
+        Me.btnFont.TabIndex = 8
+        Me.btnFont.Text = "Font"
+        Me.btnFont.UseVisualStyleBackColor = True
+        '
         'frmShowFiles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 480)
+        Me.Controls.Add(Me.btnFont)
         Me.Controls.Add(Me.chkAlternating)
         Me.Controls.Add(Me.chkDark)
         Me.Controls.Add(Me.cmbCellStyle)
@@ -175,6 +218,7 @@ Partial Class frmShowFiles
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         CType(Me.DataGridViewMain, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStripFileFolder.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -187,4 +231,10 @@ Partial Class frmShowFiles
     Friend WithEvents cmbCellStyle As ComboBox
     Friend WithEvents chkDark As CheckBox
     Friend WithEvents chkAlternating As CheckBox
+    Friend WithEvents ContextMenuStripFileFolder As ContextMenuStrip
+    Friend WithEvents AddFolderRenameToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AddFileRenameToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents btnFont As Button
+    Friend WithEvents FontDialogShowFiles As FontDialog
 End Class

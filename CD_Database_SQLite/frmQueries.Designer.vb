@@ -31,6 +31,9 @@ Partial Class frmQueries
         Me.btnLaunch = New System.Windows.Forms.Button()
         Me.txtQueryName = New System.Windows.Forms.TextBox()
         Me.btnTest = New System.Windows.Forms.Button()
+        Me.chkDark = New System.Windows.Forms.CheckBox()
+        Me.FontDialogQueries = New System.Windows.Forms.FontDialog()
+        Me.btnFont = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtQuery
@@ -99,9 +102,9 @@ Partial Class frmQueries
         '
         Me.txtQueryName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtQueryName.Enabled = False
         Me.txtQueryName.Location = New System.Drawing.Point(12, 324)
         Me.txtQueryName.Name = "txtQueryName"
+        Me.txtQueryName.ReadOnly = True
         Me.txtQueryName.Size = New System.Drawing.Size(452, 20)
         Me.txtQueryName.TabIndex = 9
         '
@@ -115,11 +118,36 @@ Partial Class frmQueries
         Me.btnTest.Text = "&Test"
         Me.btnTest.UseVisualStyleBackColor = True
         '
+        'chkDark
+        '
+        Me.chkDark.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.chkDark.AutoSize = True
+        Me.chkDark.Checked = True
+        Me.chkDark.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkDark.Location = New System.Drawing.Point(12, 514)
+        Me.chkDark.Name = "chkDark"
+        Me.chkDark.Size = New System.Drawing.Size(71, 17)
+        Me.chkDark.TabIndex = 11
+        Me.chkDark.Text = "Dark Grid"
+        Me.chkDark.UseVisualStyleBackColor = True
+        '
+        'btnFont
+        '
+        Me.btnFont.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnFont.Location = New System.Drawing.Point(89, 510)
+        Me.btnFont.Name = "btnFont"
+        Me.btnFont.Size = New System.Drawing.Size(75, 23)
+        Me.btnFont.TabIndex = 12
+        Me.btnFont.Text = "Font"
+        Me.btnFont.UseVisualStyleBackColor = True
+        '
         'frmQueries
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 545)
+        Me.Controls.Add(Me.btnFont)
+        Me.Controls.Add(Me.chkDark)
         Me.Controls.Add(Me.btnTest)
         Me.Controls.Add(Me.txtQueryName)
         Me.Controls.Add(Me.btnLaunch)
@@ -145,4 +173,7 @@ Partial Class frmQueries
     Friend WithEvents btnLaunch As Button
     Friend WithEvents txtQueryName As TextBox
     Friend WithEvents btnTest As Button
+    Friend WithEvents chkDark As CheckBox
+    Friend WithEvents FontDialogQueries As FontDialog
+    Friend WithEvents btnFont As Button
 End Class

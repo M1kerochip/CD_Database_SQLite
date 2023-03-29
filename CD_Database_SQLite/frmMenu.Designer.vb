@@ -58,7 +58,7 @@ Partial Class frmMenu
         Me.lblProgramName.Name = "lblProgramName"
         Me.lblProgramName.Size = New System.Drawing.Size(96, 13)
         Me.lblProgramName.TabIndex = 3
-        Me.lblProgramName.Text = "File Database v1.1"
+        Me.lblProgramName.Text = "File Database v1.4"
         '
         'linklblProject
         '

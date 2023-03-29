@@ -114,7 +114,6 @@
                 DataGridViewMain.AlternatingRowsDefaultCellStyle.BackColor = DataGridViewMain.RowsDefaultCellStyle.BackColor
                 DataGridViewMain.AlternatingRowsDefaultCellStyle.ForeColor = DataGridViewMain.RowsDefaultCellStyle.ForeColor
             End If
-
         Else
             'Light
             DataGridViewMain.BackgroundColor = Color.White
@@ -127,6 +126,63 @@
                 DataGridViewMain.AlternatingRowsDefaultCellStyle.BackColor = DataGridViewMain.RowsDefaultCellStyle.BackColor
                 DataGridViewMain.AlternatingRowsDefaultCellStyle.ForeColor = DataGridViewMain.RowsDefaultCellStyle.ForeColor
             End If
+        End If
+        txtSQLText.BackColor = DataGridViewMain.BackgroundColor
+        txtSQLText.ForeColor = DataGridViewMain.RowsDefaultCellStyle.ForeColor
+        cmbHeaderSize.BackColor = DataGridViewMain.BackgroundColor
+        cmbHeaderSize.ForeColor = DataGridViewMain.RowsDefaultCellStyle.ForeColor
+        cmbCellStyle.BackColor = DataGridViewMain.BackgroundColor
+        cmbCellStyle.ForeColor = DataGridViewMain.RowsDefaultCellStyle.ForeColor
+    End Sub
+
+    Private Sub AddFolderRenameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddFolderRenameToolStripMenuItem.Click
+        Dim FolderName As String
+
+        FolderName = InputBox("Please Input corrected Folder name for selected files:", "Folders:", "")
+
+        If FolderName <> "" Then
+            If DataGridViewMain.RowCount > 0 Then
+                If DataGridViewMain.SelectedRows.Count > 0 Then
+                    For Each row As DataGridViewRow In DataGridViewMain.SelectedRows
+                        'FolderName += DataGridViewMain.Rows.Item(row.Index).Cells(0).Value.ToString
+                        Dim SQL As New SQLite_Funcs
+                        SQL.AddCorrectedFileorFolderToDatabase(CInt(DataGridViewMain.Rows.Item(row.Index).Cells(0).Value), FolderName, True)
+                    Next
+                Else
+                    MessageBox.Show("Nothing selected.")
+                End If
+            Else
+                MessageBox.Show("No Data to rename!")
+            End If
+        End If
+    End Sub
+
+    Private Sub AddFileRenameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddFileRenameToolStripMenuItem.Click
+        If DataGridViewMain.RowCount > 0 Then
+            If DataGridViewMain.SelectedRows.Count <> 1 Then
+                MessageBox.Show("One file at a time")
+            Else
+                Dim FolderName As String
+
+                FolderName = InputBox("Please Input corrected Filename for selected file:", "File:", "")
+
+                If FolderName <> "" Then
+                    If DataGridViewMain.SelectedRows.Count = 1 Then
+                        Dim SQL As New SQLite_Funcs
+                        SQL.AddCorrectedFileorFolderToDatabase(CInt(DataGridViewMain.Rows.Item(DataGridViewMain.SelectedRows(0).Index).Cells(0).Value), FolderName, False)
+                    End If
+                End If
+
+            End If
+        Else
+            MessageBox.Show("No Data to rename!")
+        End If
+    End Sub
+
+    Private Sub btnFont_Click(sender As Object, e As EventArgs) Handles btnFont.Click
+        If FontDialogShowFiles.ShowDialog <> Windows.Forms.DialogResult.Cancel Then
+            DataGridViewMain.Font = FontDialogShowFiles.Font
+            txtSQLText.Font = FontDialogShowFiles.Font
         End If
     End Sub
 End Class

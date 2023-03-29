@@ -386,6 +386,10 @@ Public Class SQLite_Funcs
         End Try
     End Function
 
+    ''' <summary>
+    ''' Create System Database, tables and indexes
+    ''' </summary>
+    ''' <returns></returns>
     Public Function CreateDatabase() As Boolean
         Try
             Dim sqlite_conn As SQLiteConnection
@@ -699,6 +703,7 @@ Public Class SQLite_Funcs
 
     Public Function CheckExists_Series() As Integer
 
+
     End Function
 
     ''' <summary>
@@ -744,6 +749,40 @@ Public Class SQLite_Funcs
 
     Public Function Add_Series_ToDatabase() As Integer
 
+    End Function
+
+    Public Function AddCorrectedFileorFolderToDatabase(ByVal LineID As Integer, ByVal NewName As String, ByVal IsFolder As Boolean) As Integer
+        Try
+            Dim sqlite_conn As SQLiteConnection
+            Dim sqlite_cmd As SQLiteCommand
+
+            ' create a new database connection:
+            sqlite_conn = New SQLiteConnection(GetDatabaseString(DataBaseInMemory))
+
+            ' open the connection:
+            sqlite_conn.Open()
+
+            sqlite_cmd = sqlite_conn.CreateCommand()
+
+            'Clean input fields
+            NewName = NewName.Replace("'", "''")
+
+            If IsFolder = True Then
+                sqlite_cmd.CommandText = "INSERT INTO Corrections_Directory (Match_ID, Corrected_Directory) VALUES (" & CStr(LineID) & ", '" & NewName & "')"
+            Else
+                sqlite_cmd.CommandText = "INSERT INTO Corrections_Files (Match_ID, Corrected_Name) VALUES (" & CStr(LineID) & ", '" & NewName & "')"
+            End If
+
+            ' Now lets execute the SQL ;-)
+            sqlite_cmd.ExecuteNonQuery()
+
+            ' open the connection:
+            sqlite_conn.Close()
+            AddCorrectedFileorFolderToDatabase = 0
+        Catch ex As Exception
+            Console.WriteLine("Error: {0}", ex.ToString())
+            AddCorrectedFileorFolderToDatabase = 1
+        End Try
     End Function
 
     ''' <summary>

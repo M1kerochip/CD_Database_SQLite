@@ -170,4 +170,26 @@
         End If
     End Sub
 
+    Private Sub chkDark_CheckedChanged(sender As Object, e As EventArgs) Handles chkDark.CheckedChanged
+        If chkDark.Checked Then
+            ' Dark
+            lbQueries.BackColor = Color.FromArgb(64, 64, 64)
+            lbQueries.ForeColor = Color.White
+        Else
+            'Light
+            lbQueries.BackColor = Color.White
+            lbQueries.ForeColor = Color.Black
+        End If
+        txtQueryName.BackColor = lbQueries.BackColor
+        txtQuery.BackColor = lbQueries.BackColor
+        txtQueryName.ForeColor = lbQueries.ForeColor
+        txtQuery.ForeColor = lbQueries.ForeColor
+    End Sub
+
+    Private Sub btnFont_Click(sender As Object, e As EventArgs) Handles btnFont.Click
+        If FontDialogQueries.ShowDialog <> Windows.Forms.DialogResult.Cancel Then
+            lbQueries.Font = FontDialogQueries.Font
+            txtQuery.Font = FontDialogQueries.Font
+        End If
+    End Sub
 End Class
